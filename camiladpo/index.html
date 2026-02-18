@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camila Stringasci Kinoshita | DPO Certificada LGPD</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Montserrat', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { display: flex; flex-direction: column; }
+    .app-container { min-height: 100%; display: flex; flex-direction: column; }
+    
+    .gradient-hero { background: linear-gradient(135deg, #1B2A4A 0%, #2a3f6e 50%, #1B2A4A 100%); }
+    .gradient-overlay { background: linear-gradient(180deg, rgba(27,42,74,0.95) 0%, rgba(27,42,74,0.85) 100%); }
+    
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #E8721C;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #E8721C 0%, #d4651a 100%);
+      box-shadow: 0 4px 15px rgba(232, 114, 28, 0.4);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(232, 114, 28, 0.5);
+    }
+    
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.8);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+    }
+    
+    .service-card, .testimonial-card {
+      transition: all 0.4s ease;
+      border: 1px solid #e5e7eb;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(27,42,74,0.15);
+      border-color: #E8721C;
+    }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 80px;
+      color: #E8721C;
+      opacity: 0.3;
+      line-height: 0;
+    }
+    
+    .service-icon {
+      background: linear-gradient(135deg, #1B2A4A 0%, #2a3f6e 100%);
+      transition: all 0.3s ease;
+    }
+    .service-card:hover .service-icon {
+      background: linear-gradient(135deg, #E8721C 0%, #d4651a 100%);
+    }
+    
+    .stat-item { animation: fadeInUp 0.6s ease forwards; opacity: 0; }
+    .stat-item:nth-child(1) { animation-delay: 0.1s; }
+    .stat-item:nth-child(2) { animation-delay: 0.2s; }
+    .stat-item:nth-child(3) { animation-delay: 0.3s; }
+    .stat-item:nth-child(4) { animation-delay: 0.4s; }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(232, 114, 28, 0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+    
+    .input-field {
+      transition: all 0.3s ease;
+      border: 2px solid #e5e7eb;
+    }
+    .input-field:focus {
+      border-color: #1B2A4A;
+      box-shadow: 0 0 0 3px rgba(27,42,74,0.1);
+    }
+    
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+    
+    .page-hidden { display: none !important; }
+    .page-visible { display: block !important; }
+    
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .check-item svg {
+      color: #E8721C;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .legal-section {
+      margin-bottom: 32px;
+    }
+    .legal-section h3 {
+      color: #1B2A4A;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .legal-section p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    
+    a.link-policy {
+      color: #E8721C;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    a.link-policy:hover {
+      color: #d4651a;
+    }
+  </style>
+</head>
+<body class="h-full bg-white text-gray-800">
+  <div class="app-container w-full">
+    
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-[#1B2A4A] shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <button onclick="scrollToSection('inicio')" class="block bg-none border-none cursor-pointer">
+              <h1 id="header-name" class="text-white text-lg sm:text-xl font-bold tracking-tight">Camila Stringasci Kinoshita</h1>
+              <p id="header-subtitle" class="text-gray-300 text-xs sm:text-sm font-medium -mt-1">DPO Profissional LGPD</p>
+            </button>
+          </div>
+          
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <button onclick="scrollToSection('inicio')" class="nav-link text-white text-sm font-medium hover:text-gray-200 bg-none border-none cursor-pointer">Início</button>
+            <button onclick="scrollToSection('servicos')" class="nav-link text-white text-sm font-medium hover:text-gray-200 bg-none border-none cursor-pointer">Serviços</button>
+            <button onclick="scrollToSection('sobre')" class="nav-link text-white text-sm font-medium hover:text-gray-200 bg-none border-none cursor-pointer">Sobre</button>
+            <button onclick="scrollToSection('contato')" class="nav-link text-white text-sm font-medium hover:text-gray-200 bg-none border-none cursor-pointer">Contato</button>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu fixed top-16 right-0 bottom-0 w-64 bg-[#1B2A4A] shadow-xl md:hidden">
+        <nav class="flex flex-col p-6 space-y-4">
+          <button onclick="scrollToSection('inicio')" class="text-white text-lg font-medium hover:text-[#E8721C] transition-colors bg-none border-none cursor-pointer text-left">Início</button>
+          <button onclick="scrollToSection('servicos')" class="text-white text-lg font-medium hover:text-[#E8721C] transition-colors bg-none border-none cursor-pointer text-left">Serviços</button>
+          <button onclick="scrollToSection('sobre')" class="text-white text-lg font-medium hover:text-[#E8721C] transition-colors bg-none border-none cursor-pointer text-left">Sobre</button>
+          <button onclick="scrollToSection('contato')" class="text-white text-lg font-medium hover:text-[#E8721C] transition-colors bg-none border-none cursor-pointer text-left">Contato</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="flex-1">
+      
+      <!-- HOME PAGE -->
+      <div id="page-home" class="page-visible">
+        
+        <!-- Hero Section -->
+        <section id="inicio" class="gradient-hero relative min-h-[600px] sm:min-h-[700px] flex items-center pt-20">
+          <div class="floating-shape w-32 h-32 top-24 left-10 hidden lg:block" style="animation-delay: 0s;"></div>
+          <div class="floating-shape w-24 h-24 top-40 right-20 hidden lg:block" style="animation-delay: 2s;"></div>
+          <div class="floating-shape w-16 h-16 bottom-32 left-1/4 hidden lg:block" style="animation-delay: 4s;"></div>
+          
+          <div class="gradient-overlay absolute inset-0"></div>
+          
+          <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 sm:py-24 w-full">
+            <h2 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+              Camila Stringasci Kinoshita
+            </h2>
+            
+            <p id="hero-subtitle" class="text-lg sm:text-xl md:text-2xl text-[#E8721C] font-semibold mb-6">
+              DPO | Especialista em Adequação LGPD
+            </p>
+            
+            <p id="hero-description" class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed px-4">
+              Garanta a conformidade total da sua empresa com a Lei Geral de Proteção de Dados. 
+              Encarregada de Proteção de Dados com experiência comprovada em governança de privacidade, 
+              mapeamento de dados e compliance regulatório.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button onclick="scrollToSection('contato')" id="cta-primary" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-full text-white font-semibold text-base sm:text-lg border-none cursor-pointer">
+                Agendar Consulta Gratuita
+              </button>
+              <button onclick="scrollToSection('servicos')" id="cta-secondary" class="btn-secondary w-full sm:w-auto px-8 py-4 rounded-full text-white font-semibold text-base sm:text-lg border-none cursor-pointer bg-none">
+                Conheça os Serviços
+              </button>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 mt-10">
+              <div class="stat-item text-center">
+                <p class="text-2xl sm:text-3xl font-bold text-[#E8721C]">8+</p>
+                <p class="text-gray-400 text-xs sm:text-sm mt-1">Anos de Experiência</p>
+              </div>
+              <div class="stat-item text-center">
+                <p class="text-2xl sm:text-3xl font-bold text-[#E8721C]">100%</p>
+                <p class="text-gray-400 text-xs sm:text-sm mt-1">Conformidade LGPD</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="bg-white py-16 sm:py-20 lg:py-24">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+              <span class="inline-block bg-[#1B2A4A]/10 text-[#1B2A4A] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                O QUE OFERECEMOS
+              </span>
+              <h3 id="services-title" class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-4">
+                Serviços Especializados em LGPD
+              </h3>
+              <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+                Soluções completas para adequação à LGPD, desde o diagnóstico inicial até a manutenção contínua da conformidade.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <!-- Card 1 -->
+              <div class="service-card bg-white rounded-2xl p-6 sm:p-8">
+                <div class="service-icon w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m7-10a10 10 0 11-20 0 10 10 0 0120 0z"></path>
+                  </svg>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-3 text-center">DPO as a Service</h4>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
+                  Atuo como Encarregada de Proteção de Dados oficial. Recebo reclamações, presto esclarecimentos à ANPD e sou ponto de contato entre sua empresa, titulares e Autoridade Nacional.
+                </p>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="service-card bg-white rounded-2xl p-6 sm:p-8">
+                <div class="service-icon w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                  </svg>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-3 text-center">Mapeamento e Adequação</h4>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
+                  Realizo Data Mapping completo, Privacy Impact Assessments (PIA), identificação de GAPS e automação de processos para conformidade 100%.
+                </p>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="service-card bg-white rounded-2xl p-6 sm:p-8">
+                <div class="service-icon w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-3 text-center">Documentação LGPD</h4>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
+                  Desenvolvimento de políticas de privacidade, avisos de dados, registros de processamento, cláusulas contratuais e manuais de procedimentos.
+                </p>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="service-card bg-white rounded-2xl p-6 sm:p-8">
+                <div class="service-icon w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                  </svg>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-3 text-center">Treinamentos Corporativos</h4>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
+                  Orientações customizadas para colaboradores, contratados, gestores e conselho. Implemento 'Privacy by Design' em toda organização.
+                </p>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="service-card bg-white rounded-2xl p-6 sm:p-8">
+                <div class="service-icon w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-3 text-center">Gestão de Consentimento</h4>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
+                  Implemento plataformas de gerenciamento de consentimento, relatórios regulatórios e suporte contínuo para redução de riscos à ANPD.
+                </p>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="service-card bg-white rounded-2xl p-6 sm:p-8">
+                <div class="service-icon w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                  <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                  </svg>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-[#1B2A4A] mb-3 text-center">Governança de Privacidade</h4>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
+                  Estruturo programas de governança, comitês de privacidade, políticas internas e controles alinhados à ISO 27701 e melhores práticas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="bg-[#F5F6FA] py-16 sm:py-20 lg:py-24">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <!-- Visual Side -->
+              <div class="relative order-2 lg:order-1">
+                <img src="./images/foto-camila.jpg" alt="Camila S. Kinoshita - DPO Certificada" class="rounded-3xl aspect-square object-cover max-w-md w-full mx-auto shadow-xl">
+              </div>
+
+              <!-- Content Side -->
+              <div class="order-1 lg:order-2">
+                <span class="inline-block bg-[#E8721C]/10 text-[#E8721C] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                  QUEM SOU EU
+                </span>
+                <h3 id="about-title" class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-6">
+                  Sobre Camila Stringasci Kinoshita
+                </h3>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
+                  DPO certificada com sólida experiência em implementação de programas de governança de privacidade e adequação à LGPD. 
+                  Atuo como Encarregada de Proteção de Dados oficial, sendo canal direto entre empresas, titulares de dados e ANPD.
+                </p>
+
+                <p class="text-[#1B2A4A] font-semibold text-base sm:text-lg mb-4">Meu trabalho se concentra em:</p>
+                
+                <div class="space-y-3 mb-8">
+                  <div class="check-item">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-gray-700 text-sm sm:text-base">Mapeamento completo de atividades de tratamento de dados</span>
+                  </div>
+                  <div class="check-item">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-gray-700 text-sm sm:text-base">Implementação de políticas e procedimentos LGPD-compliant</span>
+                  </div>
+                  <div class="check-item">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-gray-700 text-sm sm:text-base">Treinamento de equipes em proteção de dados</span>
+                  </div>
+                  <div class="check-item">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-gray-700 text-sm sm:text-base">Gestão de consentimentos e direitos de titulares</span>
+                  </div>
+                  <div class="check-item">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-gray-700 text-sm sm:text-base">Conformidade com ANPD e auditoria regulatória</span>
+                  </div>
+                  <div class="check-item">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-gray-700 text-sm sm:text-base">Alinhamento com ISO 27001 e ISO 27701</span>
+                  </div>
+                </div>
+
+                <p class="text-gray-600 text-xs sm:text-sm italic mb-6 pb-6 border-b border-gray-300">
+                  <strong class="text-[#1B2A4A]">Especialidades:</strong> Governança LGPD, Privacy by Design, Mapeamento de Dados, Documentação Regulatória, Treinamentos Corporativos.
+                </p>
+
+                <button onclick="scrollToSection('contato')" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-base sm:text-lg border-none cursor-pointer">
+                  Agende sua Consulta
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="bg-[#1B2A4A] py-16 sm:py-20 lg:py-24">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+              <h3 id="contact-title" class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Entre em Contato
+              </h3>
+              <p id="contact-subtitle" class="text-gray-300 text-base sm:text-lg">
+                Agende uma consulta gratuita para avaliar a conformidade LGPD da sua empresa.
+              </p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl">
+              <form id="contact-form" class="space-y-6" action="https://formspree.io/f/mwvnqejk" method="POST">
+                <input type="hidden" name="_subject" value="Novo contato pelo site – Formulário Camila">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Seu nome completo</label>
+                  <input type="text" id="name" name="name" required class="input-field w-full px-4 py-3 rounded-xl bg-gray-50 focus:bg-white outline-none text-gray-800" placeholder="Seu nome">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Seu e-mail profissional</label>
+                  <input type="email" id="email" name="email" required class="input-field w-full px-4 py-3 rounded-xl bg-gray-50 focus:bg-white outline-none text-gray-800" placeholder="seu@email.com.br">
+                </div>
+                <div>
+                  <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Empresa/Organização</label>
+                  <input type="text" id="company" name="company" class="input-field w-full px-4 py-3 rounded-xl bg-gray-50 focus:bg-white outline-none text-gray-800" placeholder="Nome da empresa">
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Descreva brevemente sua necessidade LGPD</label>
+                  <textarea id="message" name="message" rows="5" required class="input-field w-full px-4 py-3 rounded-xl bg-gray-50 focus:bg-white outline-none text-gray-800 resize-none" placeholder="Conte sobre seu projeto..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary w-full py-4 rounded-xl text-white font-semibold text-base sm:text-lg border-none cursor-pointer">
+                  Enviar Consulta
+                </button>
+                <p class="text-xs text-gray-500 text-center">
+                  * Seus dados são coletados apenas para contato. Respeitamos a LGPD. Leia a <button onclick="showPage('privacy')" class="link-policy bg-none border-none cursor-pointer">política completa</button>.
+                </p>
+              </form>
+              
+              <!-- Success Message -->
+              <div id="success-message" class="hidden text-center py-12">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <h4 class="text-xl font-bold text-[#1B2A4A] mb-2">Mensagem Enviada!</h4>
+                <p class="text-gray-600">Obrigada pelo contato. Retornarei em breve.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-[#0f1925] py-12 sm:py-16">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-white/10">
+              <!-- Column 1 -->
+              <div>
+                <h4 class="text-white font-semibold mb-4">Sobre</h4>
+                <nav class="space-y-2">
+                  <button onclick="scrollToSection('sobre')" class="block text-gray-400 hover:text-[#E8721C] text-sm transition-colors bg-none border-none cursor-pointer text-left w-full">Sobre Camila</button>
+                  <button onclick="scrollToSection('servicos')" class="block text-gray-400 hover:text-[#E8721C] text-sm transition-colors bg-none border-none cursor-pointer text-left w-full">Serviços</button>
+                  <button onclick="scrollToSection('contato')" class="block text-gray-400 hover:text-[#E8721C] text-sm transition-colors bg-none border-none cursor-pointer text-left w-full">Contato</button>
+                </nav>
+              </div>
+
+              <!-- Column 2 -->
+              <div>
+                <h4 class="text-white font-semibold mb-4">Conformidade</h4>
+                <nav class="space-y-2">
+                  <button onclick="showPage('privacy')" class="block text-gray-400 hover:text-[#E8721C] text-sm transition-colors bg-none border-none cursor-pointer text-left w-full">Política de Privacidade</button>
+                  <button onclick="showPage('cookies')" class="block text-gray-400 hover:text-[#E8721C] text-sm transition-colors bg-none border-none cursor-pointer text-left w-full">Política de Cookies</button>
+                  <button onclick="showPage('terms')" class="block text-gray-400 hover:text-[#E8721C] text-sm transition-colors bg-none border-none cursor-pointer text-left w-full">Termos de Uso</button>
+                </nav>
+              </div>
+
+              <!-- Column 3 -->
+              <div>
+                <h4 class="text-white font-semibold mb-4">Contato</h4>
+                <p class="text-gray-400 text-sm">Utilize o formulário acima para entrar em contato.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+              <p class="text-gray-400 text-xs sm:text-sm">
+                © 2026 Camila Stringasci Kinoshita — DPO Profissional.
+              </p>
+              <span class="hidden sm:inline text-gray-600">|</span>
+              <p class="text-gray-400 text-xs sm:text-sm">
+                Baseado em conformidade com LGPD, GDPR e melhores práticas internacionais.
+              </p>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+
+      <!-- PRIVACY POLICY PAGE -->
+      <div id="page-privacy" class="page-hidden pt-24 pb-16 sm:pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <button onclick="showPage('home')" class="inline-flex items-center gap-2 text-[#E8721C] font-semibold mb-8 hover:text-[#d4651a] bg-none border-none cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Voltar ao site
+          </button>
+
+          <h1 class="text-3xl sm:text-4xl font-bold text-[#1B2A4A] mb-2">Política de Privacidade</h1>
+          <p class="text-gray-500 text-sm mb-8">Última atualização: Janeiro de 2026</p>
+
+          <div class="space-y-6 text-gray-700">
+            <div class="legal-section">
+              <h3>1. Responsável pelos Dados</h3>
+              <p>
+                <strong>Camila Stringasci Kinoshita</strong> — Data Protection Officer (DPO) é responsável pela proteção e tratamento de dados pessoais coletados através deste site.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>2. Dados Coletados</h3>
+              <p>Coletamos os seguintes dados pessoais:</p>
+              <ul class="list-disc list-inside space-y-2 mt-3 ml-2">
+                <li>Nome completo</li>
+                <li>Endereço de e-mail profissional</li>
+                <li>Informações sobre sua empresa/organização</li>
+                <li>Descrição de sua necessidade LGPD (quando fornecida)</li>
+              </ul>
+              <p class="mt-3">
+                Estes dados são coletados <strong>exclusivamente para contato profissional</strong> e prestação de serviços de consultoria DPO.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>3. Base Legal (LGPD)</h3>
+              <p>O tratamento de seus dados pessoais é fundamentado em:</p>
+              <ul class="list-disc list-inside space-y-2 mt-3 ml-2">
+                <li><strong>Artigo 7º, II (Lei Geral de Proteção de Dados):</strong> Seu consentimento explícito ao submeter o formulário.</li>
+                <li><strong>Artigo 7º, VII:</strong> Legítimo interesse de estabelecer comunicação profissional e avaliar demandas de consultoria.</li>
+              </ul>
+              <p class="mt-3 font-semibold">
+                Seus dados <strong>NÃO são compartilhados com terceiros</strong> sem seu consentimento explícito, exceto quando exigido por lei.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>4. Seus Direitos (Art. 18 LGPD)</h3>
+              <p>De acordo com a Lei Geral de Proteção de Dados, você possui os seguintes direitos:</p>
+              <ul class="list-disc list-inside space-y-2 mt-3 ml-2">
+                <li><strong>Direito de Acesso:</strong> Solicitar acesso aos dados pessoais que você forneceu.</li>
+                <li><strong>Direito de Correção:</strong> Corrigir informações incorretas ou desatualizadas.</li>
+                <li><strong>Direito ao Esquecimento:</strong> Solicitar exclusão de seus dados pessoais (quando aplicável).</li>
+                <li><strong>Direito de Revogar Consentimento:</strong> Revogar o consentimento a qualquer momento.</li>
+                <li><strong>Direito de Portabilidade:</strong> Receber uma cópia de seus dados em formato estruturado.</li>
+                <li><strong>Direito de Oposição:</strong> Opor-se ao processamento de seus dados.</li>
+              </ul>
+            </div>
+
+            <div class="legal-section">
+              <h3>5. Segurança dos Dados</h3>
+              <p>
+                Implementamos medidas técnicas e organizacionais adequadas para proteger seus dados pessoais contra acesso não autorizado, alteração, divulgação ou destruição não autorizada.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>6. Retenção de Dados</h3>
+              <p>
+                Seus dados pessoais serão retidos pelo tempo necessário para cumprir os objetivos para os quais foram coletados. Após esse período, serão excluídos com segurança, salvo quando haja obrigação legal de retenção.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>7. Cookies</h3>
+              <p>
+                Este site utiliza cookies essenciais apenas para manter o funcionamento básico, registrar consentimento LGPD e proteger contra ataques. Nenhum cookie de rastreamento ou análise é usado sem seu consentimento explícito.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>8. Reclamações à ANPD</h3>
+              <p>
+                Se você tiver dúvidas sobre o tratamento de seus dados pessoais ou deseja exercer seus direitos LGPD, você pode:
+              </p>
+              <ul class="list-disc list-inside space-y-2 mt-3 ml-2">
+                <li>Entrar em contato através do formulário neste site.</li>
+                <li>Apresentar uma reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</li>
+                <li>Visite: <a href="https://www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd" target="_blank" rel="noopener noreferrer" class="link-policy">www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd</a></li>
+              </ul>
+            </div>
+
+            <div class="legal-section">
+              <h3>9. Alterações desta Política</h3>
+              <p>
+                Essa Política de Privacidade pode ser alterada a qualquer momento. Recomendamos que você a revise periodicamente para se manter informado sobre como protegemos seus dados pessoais.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <p class="text-gray-600 text-sm">
+              <strong>Data de vigência:</strong> Esta política está vigente desde janeiro de 2026 e será atualizada conforme necessário.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COOKIES POLICY PAGE -->
+      <div id="page-cookies" class="page-hidden pt-24 pb-16 sm:pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <button onclick="showPage('home')" class="inline-flex items-center gap-2 text-[#E8721C] font-semibold mb-8 hover:text-[#d4651a] bg-none border-none cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Voltar ao site
+          </button>
+
+          <h1 class="text-3xl sm:text-4xl font-bold text-[#1B2A4A] mb-2">Política de Cookies</h1>
+          <p class="text-gray-500 text-sm mb-8">Última atualização: Janeiro de 2026</p>
+
+          <div class="space-y-6 text-gray-700">
+            <div class="legal-section">
+              <h3>1. O que são Cookies?</h3>
+              <p>
+                Cookies são pequenos arquivos de texto armazenados no seu dispositivo que ajudam a melhorar sua experiência ao navegar. Eles não contêm vírus e não comprometem seu computador.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>2. Tipos de Cookies Utilizados</h3>
+              <p><strong>Cookies Essenciais:</strong> Este site utiliza apenas cookies essenciais para:</p>
+              <ul class="list-disc list-inside space-y-2 mt-3 ml-2">
+                <li>Manter o funcionamento básico do site</li>
+                <li>Registrar seu consentimento com a LGPD</li>
+                <li>Proteger o site contra ataques de segurança</li>
+              </ul>
+              <p class="mt-4">
+                <strong>Cookies de Rastreamento:</strong> Não utilizamos Google Analytics, pixels de rastreamento ou cookies de publicidade sem seu consentimento explícito.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>3. Consentimento e Configurações</h3>
+              <p>
+                Respeitamos sua privacidade. Você pode gerenciar suas preferências de cookies a qualquer momento através das configurações do seu navegador.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>4. Como Gerenciar Cookies</h3>
+              <p>Você pode controlar e excluir cookies da seguinte forma:</p>
+              <ul class="list-disc list-inside space-y-2 mt-3 ml-2">
+                <li><strong>Google Chrome:</strong> Configurações → Privacidade e segurança → Cookies</li>
+                <li><strong>Firefox:</strong> Preferências → Privacidade e Segurança → Cookies</li>
+                <li><strong>Safari:</strong> Preferências → Privacidade → Gerenciar dados do site</li>
+                <li><strong>Edge:</strong> Configurações → Privacidade → Cookies</li>
+              </ul>
+            </div>
+
+            <div class="legal-section">
+              <h3>5. Revogar Consentimento</h3>
+              <p>
+                Você pode revogar seu consentimento a qualquer momento alterando suas configurações de navegador ou entrando em contato através do formulário de contato.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>6. Conformidade LGPD</h3>
+              <p>
+                Esta política de cookies está de acordo com a Lei Geral de Proteção de Dados (LGPD) e com os regulamentos internacionais de privacidade, como o GDPR.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>7. Alterações desta Política</h3>
+              <p>
+                Podemos atualizar esta Política de Cookies a qualquer momento. Recomendamos revisá-la periodicamente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TERMS OF USE PAGE -->
+      <div id="page-terms" class="page-hidden pt-24 pb-16 sm:pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <button onclick="showPage('home')" class="inline-flex items-center gap-2 text-[#E8721C] font-semibold mb-8 hover:text-[#d4651a] bg-none border-none cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Voltar ao site
+          </button>
+
+          <h1 class="text-3xl sm:text-4xl font-bold text-[#1B2A4A] mb-2">Termos de Uso</h1>
+          <p class="text-gray-500 text-sm mb-8">Última atualização: Janeiro de 2026</p>
+
+          <div class="space-y-6 text-gray-700">
+            <div class="legal-section">
+              <h3>1. Aceitação dos Termos</h3>
+              <p>
+                Ao acessar e usar este site, você concorda em estar vinculado por estes Termos de Uso. Se você não concordar com qualquer parte destes termos, você não deverá acessar ou usar o site.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>2. Uso do Site</h3>
+              <p>
+                Este site é fornecido "tal como é" e "como está disponível" para fins informativos e comerciais. Você concorda em usar este site apenas para fins legítimos e em conformidade com todas as leis, regras e regulamentos aplicáveis.
+              </p>
+              <p class="mt-3">
+                Você não pode usar este site para transmitir qualquer conteúdo ilegal, ofensivo, ameaçador ou prejudicial.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>3. Propriedade Intelectual</h3>
+              <p>
+                Todo o conteúdo neste site, incluindo textos, gráficos, logos, ícones, imagens e software, é propriedade de <strong>Camila Stringasci Kinoshita</strong> ou de seus fornecedores de conteúdo licenciados e está protegido pelas leis de direitos autorais internacionais.
+              </p>
+              <p class="mt-3">
+                Você não pode reproduzir, distribuir, transmitir, exibir, executar ou publicar qualquer conteúdo sem permissão escrita prévia.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>4. Limitação de Responsabilidade</h3>
+              <p>
+                As informações fornecidas neste site são apenas para fins informativos. <strong>Elas não substituem aconselhamento jurídico profissional.</strong> Você deve sempre consultar um advogado ou especialista legal antes de tomar decisões importantes relacionadas à conformidade regulatória.
+              </p>
+              <p class="mt-3">
+                Camila Stringasci Kinoshita não será responsável por quaisquer danos diretos, indiretos, incidentais, especiais ou consequentes decorrentes do seu uso ou incapacidade de usar este site.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>5. Isenção de Garantias</h3>
+              <p>
+                Este site e seu conteúdo são fornecidos sem garantias de qualquer tipo, expressas ou implícitas, incluindo garantias de comercialidade, adequação a um propósito específico ou não violação.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>6. Links Externos</h3>
+              <p>
+                Este site pode conter links para sites externos. Não somos responsáveis pelo conteúdo, precisão ou práticas de privacidade desses sites externos. Seu acesso a sites externos é por sua conta e risco.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>7. Modificação dos Termos</h3>
+              <p>
+                Camila Stringasci Kinoshita reserva-se o direito de modificar estes Termos de Uso a qualquer momento, sem aviso prévio. Seu uso contínuo do site após modificações constitui aceitação dos novos termos.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>8. Rescisão</h3>
+              <p>
+                Podemos rescindir seu acesso ao site a qualquer momento, sem motivo e sem aviso prévio.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>9. Lei Aplicável</h3>
+              <p>
+                Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil, especificamente pela Lei Geral de Proteção de Dados (LGPD) e outras leis aplicáveis.
+              </p>
+            </div>
+
+            <div class="legal-section">
+              <h3>10. Contato</h3>
+              <p>
+                Se você tiver dúvidas sobre estes Termos de Uso, por favor utilize o formulário de contato no site.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    // Helper function to show/hide pages
+    function showPage(pageName, shouldScroll = true) {
+      document.querySelectorAll('[id^="page-"]').forEach(page => {
+        page.classList.add('page-hidden');
+        page.classList.remove('page-visible');
+      });
+      
+      const targetPage = document.getElementById(`page-${pageName}`);
+      if (targetPage) {
+        targetPage.classList.remove('page-hidden');
+        targetPage.classList.add('page-visible');
+        
+        // Só rola ao topo se shouldScroll for true
+        if (shouldScroll) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      // Close mobile menu
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu) mobileMenu.classList.remove('open');
+    }
+
+    // Helper function to scroll to sections
+    function scrollToSection(sectionId) {
+      // Primeiro, garantir que estamos na página home (sem scroll automático)
+      showPage('home', false);
+      
+      // Pequeno delay para garantir que a página home está visível
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const headerOffset = 80;
+          const elementPosition = section.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+
+      // Close mobile menu
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu) {
+        mobileMenu.classList.remove('open');
+      }
+    }
+
+    // Default configuration
+    const defaultConfig = {
+      header_name: 'Camila Stringasci Kinoshita',
+      header_subtitle: 'DPO Profissional LGPD',
+      hero_title: 'Camila Stringasci Kinoshita',
+      hero_subtitle: 'DPO Certificada | Especialista em Adequação LGPD',
+      hero_description: 'Garanta a conformidade total da sua empresa com a Lei Geral de Proteção de Dados. Encarregada de Proteção de Dados com experiência comprovada em governança de privacidade, mapeamento de dados e compliance regulatório.',
+      cta_primary: 'Agendar Consulta Gratuita',
+      cta_secondary: 'Conheça os Serviços',
+      services_title: 'Serviços Especializados em LGPD',
+      about_title: 'Sobre Camila Stringasci Kinoshita',
+      testimonials_title: 'Feedback de Clientes',
+      contact_title: 'Entre em Contato',
+      contact_subtitle: 'Agende uma consulta gratuita para avaliar a conformidade LGPD da sua empresa.',
+      background_color: '#1B2A4A',
+      secondary_surface_color: '#F5F6FA',
+      text_color: '#2D2D2D',
+      primary_action_color: '#E8721C',
+      secondary_action_color: '#FFFFFF',
+      font_family: 'Montserrat',
+      font_size: 16
+    };
+
+    // onConfigChange function
+    async function onConfigChange(config) {
+      document.getElementById('header-name').textContent = config.header_name || defaultConfig.header_name;
+      document.getElementById('header-subtitle').textContent = config.header_subtitle || defaultConfig.header_subtitle;
+      document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+      document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      document.getElementById('hero-description').textContent = config.hero_description || defaultConfig.hero_description;
+      document.getElementById('cta-primary').textContent = config.cta_primary || defaultConfig.cta_primary;
+      document.getElementById('cta-secondary').textContent = config.cta_secondary || defaultConfig.cta_secondary;
+      document.getElementById('services-title').textContent = config.services_title || defaultConfig.services_title;
+      document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+      document.getElementById('testimonials-title').textContent = config.testimonials_title || defaultConfig.testimonials_title;
+      document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+      document.getElementById('contact-subtitle').textContent = config.contact_subtitle || defaultConfig.contact_subtitle;
+
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.secondary_surface_color || defaultConfig.secondary_surface_color;
+      const primaryAction = config.primary_action_color || defaultConfig.primary_action_color;
+
+      document.getElementById('header').style.backgroundColor = bgColor;
+      document.getElementById('inicio').style.background = `linear-gradient(135deg, ${bgColor} 0%, ${adjustColor(bgColor, 30)} 50%, ${bgColor} 100%)`;
+      document.getElementById('servicos').style.backgroundColor = surfaceColor;
+      document.getElementById('sobre').style.backgroundColor = surfaceColor;
+      document.getElementById('contato').style.backgroundColor = bgColor;
+
+      const primaryBtns = document.querySelectorAll('.btn-primary');
+      primaryBtns.forEach(btn => {
+        btn.style.background = `linear-gradient(135deg, ${primaryAction} 0%, ${adjustColor(primaryAction, -10)} 100%)`;
+      });
+
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const fontSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+      
+      document.getElementById('hero-title').style.fontSize = `${fontSize * 3}px`;
+      document.getElementById('hero-subtitle').style.fontSize = `${fontSize * 1.5}px`;
+      document.getElementById('services-title').style.fontSize = `${fontSize * 2}px`;
+      document.getElementById('about-title').style.fontSize = `${fontSize * 2}px`;
+      document.getElementById('testimonials-title').style.fontSize = `${fontSize * 2}px`;
+      document.getElementById('contact-title').style.fontSize = `${fontSize * 2}px`;
+    }
+
+    function adjustColor(color, amount) {
+      const hex = color.replace('#', '');
+      const r = Math.max(0, Math.min(255, parseInt(hex.substr(0, 2), 16) + amount));
+      const g = Math.max(0, Math.min(255, parseInt(hex.substr(2, 2), 16) + amount));
+      const b = Math.max(0, Math.min(255, parseInt(hex.substr(4, 2), 16) + amount));
+      return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+          },
+          {
+            get: () => config.secondary_surface_color || defaultConfig.secondary_surface_color,
+            set: (value) => { config.secondary_surface_color = value; window.elementSdk.setConfig({ secondary_surface_color: value }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => { config.primary_action_color = value; window.elementSdk.setConfig({ primary_action_color: value }); }
+          },
+          {
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => { config.secondary_action_color = value; window.elementSdk.setConfig({ secondary_action_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['header_name', config.header_name || defaultConfig.header_name],
+        ['header_subtitle', config.header_subtitle || defaultConfig.header_subtitle],
+        ['hero_title', config.hero_title || defaultConfig.hero_title],
+        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+        ['hero_description', config.hero_description || defaultConfig.hero_description],
+        ['cta_primary', config.cta_primary || defaultConfig.cta_primary],
+        ['cta_secondary', config.cta_secondary || defaultConfig.cta_secondary],
+        ['services_title', config.services_title || defaultConfig.services_title],
+        ['about_title', config.about_title || defaultConfig.about_title],
+        ['testimonials_title', config.testimonials_title || defaultConfig.testimonials_title],
+        ['contact_title', config.contact_title || defaultConfig.contact_title],
+        ['contact_subtitle', config.contact_subtitle || defaultConfig.contact_subtitle]
+      ]);
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Form submission (envio para Formspree - você recebe no e-mail)
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+    const formSpreeUrl = contactForm.getAttribute('action'); // usa o action do form
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const btnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      try {
+        const res = await fetch(formSpreeUrl, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        const data = await res.json();
+        if (data.ok) {
+          contactForm.style.display = 'none';
+          successMessage.classList.remove('hidden');
+          contactForm.reset();
+          setTimeout(() => {
+            contactForm.style.display = 'block';
+            successMessage.classList.add('hidden');
+          }, 5000);
+        } else {
+          alert('Não foi possível enviar. Tente novamente ou envie um e-mail diretamente.');
+        }
+      } catch (err) {
+        alert('Erro de conexão. Verifique sua internet e tente novamente.');
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = btnText;
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cf6a31402648b17',t:'MTc3MTM0NTQ4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+
